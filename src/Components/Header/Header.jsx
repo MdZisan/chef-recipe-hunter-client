@@ -7,7 +7,7 @@ import { RxAvatar } from 'react-icons/rx';
 const Header = () => {
     return (
         <div>
-            <div className="navbar bg-green-100">
+            <div className="navbar  bg-green-50 " > 
   <div className="navbar-start">
   <div className="dropdown md:hidden">
       <label tabIndex={0} className="btn btn-ghost btn-circle">
