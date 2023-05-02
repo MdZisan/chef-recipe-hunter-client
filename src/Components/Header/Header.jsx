@@ -19,7 +19,7 @@ const Header = () => {
       </ul>
     </div>
     <div className="hidden md:block">
-     <Link className='ml-2 btn bg-transparent text-black border-0 hover:bg-transparent hover:bg-green-300'>Home</Link>
+     <Link to='/' className='ml-2 btn bg-transparent text-black border-0 hover:bg-transparent hover:bg-green-300'>Home</Link>
      <Link className='ml-2 btn bg-transparent text-black border-0 hover:bg-transparent hover:bg-green-300'>Blog</Link>
 
     </div>
@@ -28,7 +28,7 @@ const Header = () => {
     <Link className="btn btn-ghost normal-case text-xl text-green-600 hover:bg-green-200 ">Bangla Foods</Link>
   </div>
   <div className="navbar-end">
-    <Link className='btn hover:bg-green-400 hover:text-black border-none'>Login</Link>
+    <Link to='/login' className='btn hover:bg-green-400 hover:text-black border-none'>Login</Link>
   <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="rounded-full">
