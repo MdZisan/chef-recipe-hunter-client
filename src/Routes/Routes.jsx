@@ -27,11 +27,14 @@ const Routes = createBrowserRouter([
     ],
   },
   {
-    path: "recipe",
+    path: "chefrecipes",
     element: <ChefRecipesLayout></ChefRecipesLayout>,
+      
     children: [
         { path: ":id",
-     element: <ChefRecipesPage></ChefRecipesPage> }
+     element: <ChefRecipesPage></ChefRecipesPage>
+      ,loader:({params})=>fetch(`http://localhost:5000/chefrecipes/${params.id}`)
+    }
     ],
   },
 ]);

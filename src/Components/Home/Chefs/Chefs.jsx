@@ -14,7 +14,7 @@ const Chefs = () => {
     },[])
 
 
-console.log(chefs);
+// console.log(chefs);
 
     return (
         <div className='grid grid-cols-1 md:grid-cols-3 md:gap-3 m-6'>
