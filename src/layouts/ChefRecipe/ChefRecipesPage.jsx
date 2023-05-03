@@ -25,7 +25,7 @@ const ChefRecipesPage = () => {
           <div className="hero-content flex lg:flex-row-reverse items-center">
             <img
               src={chef.chef_image}
-              className="max-w-sm rounded-lg shadow-2xl"
+              className="max-w-sm rounded-lg shadow-2xl " loading="lazy"
             />
             <div >
               <h1 className="text-5xl font-bold">{chef.chef_name}</h1>

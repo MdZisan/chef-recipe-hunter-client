@@ -10,7 +10,7 @@ const SingleChef = ({chef}) => {
         <div>
             
             <div className="card card-side bg-base-100 shadow-xl h-72">
-  <figure ><img src={chef_image} alt="Movie" className='rounded-lg h-56 ml-3' /></figure>
+  <figure ><img src={chef_image} alt="Movie" className='rounded-lg h-56 ml-3' loading='lazy'/></figure>
   <div className="card-body">
     <h2 className="card-title font-bold">{chef_name}</h2>
     <p className='font-semibold'>Expreience: {years_of_experience}</p>
