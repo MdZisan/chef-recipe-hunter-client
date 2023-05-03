@@ -17,7 +17,7 @@ const Chefs = () => {
 // console.log(chefs);
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-3 md:gap-3 m-6'>
+        <div className='grid grid-cols-1 md:grid-cols-3 md:gap-3 m-6 '>
             {
                 chefs.map(chef=><SingleChef key={chef.id} chef={chef}></SingleChef>)
             }
