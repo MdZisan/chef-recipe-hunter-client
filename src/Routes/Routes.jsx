@@ -9,6 +9,7 @@ import ChefRecipesPage from "../layouts/ChefRecipe/ChefRecipesPage";
 import RecipeDetailsLayout from "../layouts/RecipeDetailsLayout/RecipeDetailsLayout";
 import SingleRecipeDetails from "../layouts/RecipeDetailsLayout/SingleRecipeDetails";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
+import Blogs from "../Components/Blog/Blogs";
 
 const Routes = createBrowserRouter([
   {
@@ -27,7 +28,10 @@ const Routes = createBrowserRouter([
       {
         path: "register",
         element: <Register></Register>,
-      },
+      },{
+        path:"blog",
+        element:<Blogs></Blogs>
+      }
     ],
   },
   {

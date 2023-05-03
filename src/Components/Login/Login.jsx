@@ -5,7 +5,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
   const [error,setError]=useState('')
-  const {user,login,googleSignIn} = useContext(AuthContext)
+  const {user,login,googleSignIn,githubSignIn} = useContext(AuthContext)
 // console.log(user,loading,createUser,login,googleSignIn);
 
 const handleGoogleSignIn =()=>{
@@ -15,13 +15,21 @@ const handleGoogleSignIn =()=>{
     // console.log(loggedUser);
   })
   .catch(error=>{
-    // setError(error.message);
+    setError(error.message);
     console.log(error.message);
   })
+}
+const handleGithubSignIn =()=>{
+  githubSignIn()
+  .then(result=>{
+    const loggedUser =  result.user;
+    console.log(loggedUser);
+  })
+  .catch(error=>{
+    setError(error.message);
+    console.log(error);
 
- 
-
-
+  })
 }
 
 
@@ -79,7 +87,7 @@ if(user){
              <button className="btn bg-sky-400 m-2 border-0" onClick={handleGoogleSignIn} ><Link> <span className='flex items-center gap-2'><FaGoogle></FaGoogle> Login with Google</span> </Link></button>
         </div>
         <div className="form-control mt-3">
-             <button className="btn  m-2" ><Link> <span className='flex items-center gap-2'><FaGithub/> Login with Github</span> </Link></button>
+             <button className="btn  m-2" onClick={handleGithubSignIn} ><Link> <span className='flex items-center gap-2'><FaGithub/> Login with Github</span> </Link></button>
         </div>
 
           <hr />
