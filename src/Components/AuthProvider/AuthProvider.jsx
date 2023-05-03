@@ -34,6 +34,7 @@ const createUser = (email,password)=>{
 const login = (email,password)=>{
     setLoading(true);
     return signInWithEmailAndPassword(auth,email,password)
+    
 }
 const googleSignIn = ()=>{
     setLoading(true);

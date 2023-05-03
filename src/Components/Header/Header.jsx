@@ -54,7 +54,7 @@ const Header = () => {
        {/* { user || <div className="rounded-full">
           <div className='text-3xl'><RxAvatar/></div>
         </div>} */}
-       { user ? <div className="avatar"  title={user.displayName}>
+       { user?.photoURL ? <div className="avatar"  title={user.displayName}>
   <div className="w-10 rounded-full" title={user.displayName} >
     <img src={user.photoURL} title={user.displayName}/>
   </div>
@@ -64,7 +64,12 @@ const Header = () => {
       </label>
       <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
         
-        <li><a>  <button onClick={handleLogOut}>Logout</button> </a></li>
+        <li><a> 
+           {/* <button onClick={handleLogOut}>Logout</button>  */}
+        {user ? <a ><button onClick={handleLogOut}>Logout</button></a> : <Link to='/login'>Login</Link>}
+       {user&& <p>{user.email}</p>}
+        
+         </a></li>
       </ul>
     </div>
     
