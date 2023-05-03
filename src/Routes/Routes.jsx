@@ -8,11 +8,13 @@ import ChefRecipesLayout from "../layouts/ChefRecipe/ChefRecipesLayout";
 import ChefRecipesPage from "../layouts/ChefRecipe/ChefRecipesPage";
 import RecipeDetailsLayout from "../layouts/RecipeDetailsLayout/RecipeDetailsLayout";
 import SingleRecipeDetails from "../layouts/RecipeDetailsLayout/SingleRecipeDetails";
+import ErrorPage from "../Components/ErrorPage/ErrorPage";
 
 const Routes = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement:<ErrorPage/>,
     children: [
       {
         path: "/",

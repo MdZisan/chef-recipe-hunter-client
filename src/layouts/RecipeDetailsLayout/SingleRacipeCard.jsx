@@ -16,7 +16,7 @@ const SingleRacipeCard = ({ details }) => {
       <h1 className="text-5xl font-bold text-center">{recipe_name}</h1>
         <div className="p-7 grid grid-cols-3   gap-7">
          <div>
-         <img src={food_img} className="rounded-lg shadow-2xl" />
+         <img src={food_img} className="rounded-lg shadow-2xl" loading="lazy"/>
           <button className="btn btn-success text-white mt-3">Add to Favorite</button>
          </div>
           <div>
