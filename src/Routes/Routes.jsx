@@ -6,6 +6,8 @@ import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
 import ChefRecipesLayout from "../layouts/ChefRecipe/ChefRecipesLayout";
 import ChefRecipesPage from "../layouts/ChefRecipe/ChefRecipesPage";
+import RecipeDetailsLayout from "../layouts/RecipeDetailsLayout/RecipeDetailsLayout";
+import SingleRecipeDetails from "../layouts/RecipeDetailsLayout/SingleRecipeDetails";
 
 const Routes = createBrowserRouter([
   {
@@ -37,6 +39,18 @@ const Routes = createBrowserRouter([
     }
     ],
   },
+  {
+    path:"recipe",
+    element:<RecipeDetailsLayout></RecipeDetailsLayout>,
+    children:[
+      {
+        path:":id",
+        element:<SingleRecipeDetails></SingleRecipeDetails>,
+        loader:({params})=>fetch(`http://localhost:5000/recipe/${params.id}`)
+      }
+    ]
+    
+  }
 ]);
 
 export default Routes;

@@ -7,7 +7,7 @@ const ChefRecipesPage = () => {
   const { id } = useParams();
   // console.log(id);
   const chefrecipes = useLoaderData();
-  console.log(chefrecipes);
+  // console.log(chefrecipes);
 
   useEffect(() => {
     fetch(`http://localhost:5000/chefs/${id}`)
@@ -16,7 +16,7 @@ const ChefRecipesPage = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  console.log(chef);
+  // console.log(chef);
   return (
     <div>
       {/* banner */}
