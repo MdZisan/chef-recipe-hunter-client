@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaBeer } from 'react-icons/fa';
 import { RxAvatar } from 'react-icons/rx';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Header = () => {
     return (
@@ -19,8 +20,12 @@ const Header = () => {
       </ul>
     </div>
     <div className="hidden md:block">
-     <Link to='/' className='ml-2 btn bg-transparent text-black border-0 hover:bg-transparent hover:bg-green-300'>Home</Link>
-     <Link className='ml-2 btn bg-transparent text-black border-0 hover:bg-transparent hover:bg-green-300'>Blog</Link>
+   <p className='gap-3'>
+    
+    <ActiveLink to='/'>Home</ActiveLink>
+
+     <ActiveLink to='/blog' >Blog</ActiveLink>
+    </p>  
 
     </div>
   </div>

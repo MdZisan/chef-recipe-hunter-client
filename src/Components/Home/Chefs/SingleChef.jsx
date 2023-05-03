@@ -7,7 +7,7 @@ const SingleChef = ({chef}) => {
 
 
     return (
-        <div>
+        <div className='my-3'>
             
             <div className="card card-side bg-base-100 shadow-xl h-72">
   <figure ><img src={chef_image} alt="Movie" className='rounded-lg h-56 ml-3' loading='lazy'/></figure>
@@ -17,7 +17,7 @@ const SingleChef = ({chef}) => {
     <p className='font-semibold'>Total Recipes: {number_of_recipes}</p>
     <p className='font-semibold'>Likes: {likes}</p>
     <div className="card-actions ">
-      <button className="text-white btn btn-success">
+      <button className="text-white btn btn-success w-[100px] md:w-auto">
        <Link to={`/chefrecipes/${id}`}>View Chef Recipes</Link>
         </button>
     </div>

@@ -36,7 +36,7 @@ const back = () => {
       {chef && (
         
         <div className="card card-side bg-green-50 shadow-xl  ">
-  <figure className="h-[250px] my-auto ml-2"><img src={chef.chef_image} alt="food" loading="lazy" /></figure>
+  <figure className="h-[400px] w-[700px] my-auto ml-2 rounded-lg"><img src={chef.chef_image} alt="food" loading="lazy"  className="rounded-lg" /></figure>
   <div className="card-body">
   <h1 className="text-xl font-bold">{chef.chef_name}</h1>
            

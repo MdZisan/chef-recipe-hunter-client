@@ -22,10 +22,10 @@ const ChefRecipesPage = () => {
       {/* banner */}
       {chef && (
         <div className="hero min-h-screen  bg-green-50 ">
-          <div className="hero-content flex lg:flex-row-reverse items-center">
+          <div className="hero-content flex flex-col lg:flex-row-reverse items-center">
             <img
               src={chef.chef_image}
-              className="max-w-sm rounded-lg shadow-2xl " loading="lazy"
+              className="max-w-sm rounded-lg shadow-2xl w-[100%] " loading="lazy"
             />
             <div >
               <h1 className="text-5xl font-bold">{chef.chef_name}</h1>
@@ -43,7 +43,7 @@ const ChefRecipesPage = () => {
       )}
 
         {/* recipes card */}
-        <div className="grid grid-cols-1 md:grid-cols-3 p-5 bg-green-50">
+        <div className="grid grid-cols-1 md:grid-cols-3 p-5 bg-green-50 ">
             {
                 chefrecipes.map((recipe,index)=><RecipeCard key={index} recipe={recipe}></RecipeCard>)
             }
