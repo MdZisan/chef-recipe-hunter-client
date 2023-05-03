@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { FaBeer, FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
-
+  const [error,setError]=useState('')
   const {user,login,googleSignIn} = useContext(AuthContext)
 // console.log(user,loading,createUser,login,googleSignIn);
 
@@ -15,10 +15,12 @@ const handleGoogleSignIn =()=>{
     // console.log(loggedUser);
   })
   .catch(error=>{
-    console.log(error);
+    // setError(error.message);
+    console.log(error.message);
   })
 
-  
+ 
+
 
 }
 
@@ -34,9 +36,10 @@ const handleLogin =(event)=>{
   .then(result=>{
     const loggedUser = result.user;
     console.log(loggedUser);
+    setError('')
   })
   .catch(error=>{
-    console.log(error);
+    setError(error.message);
   })
 }
 
@@ -71,6 +74,7 @@ if(user){
               </div>
             </div>
           </form>
+          <p className='text-red-600'>{error}</p>
           <div className="form-control mt-1">
              <button className="btn bg-sky-400 m-2 border-0" onClick={handleGoogleSignIn} ><Link> <span className='flex items-center gap-2'><FaGoogle></FaGoogle> Login with Google</span> </Link></button>
         </div>

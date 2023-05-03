@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Register = () => {
-
+const [error,setError] = useState('')
   const {createUser,profileUpdate,user} = useContext(AuthContext);
   if(user){
    return <Navigate to={'/'}></Navigate>
@@ -18,8 +18,15 @@ const password = form.password.value;
 const photoUrl = form.photo.value;
 const name= form.name.value;
 
+
+if(password.length < 6){
+  setError('Please set password more the 6 letter');
+  return
+}
+
 createUser(email,password)
 .then((res)=>{
+  setError('')
   profileUpdate(name,photoUrl)
 .then(result=>{
   console.log('profile',result);
@@ -77,6 +84,7 @@ form.reset()
               </div>
             </div>
           </form>
+          <p className='text-red-600'>{error}</p>
           <hr />
           <div className="form-control mt-3">
             <h2 className='text-center font-bold mb-2'>Already have an account?</h2>
