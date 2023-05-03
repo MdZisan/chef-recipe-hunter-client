@@ -47,7 +47,7 @@ const addToFav=()=>{
           </div>
           <div>
             <h2 className="font-semibold text-2xl text-green-400">Cooking Mathod</h2>
-            {instructions.map(ins=><li>{ins}</li>)}
+            {instructions.map(ins=><li key={ins}>{ins}</li>)}
           </div>
         </div>
       </div>

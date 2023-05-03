@@ -10,7 +10,7 @@ const ChefRecipesPage = () => {
   // console.log(chefrecipes);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/chefs/${id}`)
+    fetch(`https://chef-recipe-hunter-server-fy87vvubs-mdzisan.vercel.app/chefs/${id}`)
       .then((res) => res.json())
       .then((data) => setChef(data))
       .catch((error) => console.log(error));

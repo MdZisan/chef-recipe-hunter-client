@@ -37,7 +37,7 @@ const Routes = createBrowserRouter([
     children: [
         { path: ":id",
      element: <ChefRecipesPage></ChefRecipesPage>
-      ,loader:({params})=>fetch(`http://localhost:5000/chefrecipes/${params.id}`)
+      ,loader:({params})=>fetch(`https://chef-recipe-hunter-server-fy87vvubs-mdzisan.vercel.app/chefrecipes/${params.id}`)
     }
     ],
   },
@@ -48,7 +48,7 @@ const Routes = createBrowserRouter([
       {
         path:":id",
         element:<SingleRecipeDetails></SingleRecipeDetails>,
-        loader:({params})=>fetch(`http://localhost:5000/recipe/${params.id}`)
+        loader:({params})=>fetch(`https://chef-recipe-hunter-server-fy87vvubs-mdzisan.vercel.app/recipe/${params.id}`)
       }
     ]
     

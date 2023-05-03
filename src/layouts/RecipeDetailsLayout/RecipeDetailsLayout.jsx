@@ -14,7 +14,7 @@ const RecipeDetailsLayout = () => {
     }, []);
     return (
         <>
-        {loading ?  <div className="min-h-screen bg-green-200  flex flex-col items-center justify-center"><div class="lds-dual-ring"></div><span>please wait <br /> loading </span></div> : 
+        {loading ?  <div className="min-h-screen bg-green-200  flex flex-col items-center justify-center"><div className="lds-dual-ring"></div><span>please wait <br /> loading </span></div> : 
           <div className="bg-green-50">
             <Header></Header>
             <Outlet></Outlet>

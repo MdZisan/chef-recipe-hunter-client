@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import { Link } from 'react-router-dom';
-import { FaBeer } from 'react-icons/fa';
+import { Link, useLocation } from 'react-router-dom';
+
 import { RxAvatar } from 'react-icons/rx';
 import ActiveLink from '../ActiveLink/ActiveLink';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Header = () => {
+
+  const {logout,user}= useContext(AuthContext);
+
+  const location =  useLocation()
+
+ 
+
+  const handleLogOut = ()=>{
+    logout()
+   
+   
+  }
+
     return (
         <div>
             <div className="navbar  bg-green-50 " > 
@@ -33,21 +47,31 @@ const Header = () => {
     <Link to='/' className="btn btn-ghost normal-case text-xl text-green-600 hover:bg-green-200 ">Bangla Foods</Link>
   </div>
   <div className="navbar-end">
-    <Link to='/login' className='btn hover:bg-green-400 hover:text-black border-none'>Login</Link>
+  {user ? <a className='btn mx-2 bg-success border-none hover:bg-green-400 text-white'><button onClick={handleLogOut}>Logout</button></a> : <Link to='/login' className='btn hover:bg-green-400 hover:text-black border-none'>Login</Link>}
+       {user&& <p>{user.email}</p>}
   <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-        <div className="rounded-full">
+       {/* { user || <div className="rounded-full">
           <div className='text-3xl'><RxAvatar/></div>
-        </div>
+        </div>} */}
+       { user ? <div className="avatar"  title={user.displayName}>
+  <div className="w-10 rounded-full" title={user.displayName} >
+    <img src={user.photoURL} title={user.displayName}/>
+  </div>
+</div> : <div className="rounded-full">
+          <div className='text-3xl'><RxAvatar/></div>
+        </div>}
       </label>
       <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
         
-        <li><a>Logout</a></li>
+        <li><a>  <button onClick={handleLogOut}>Logout</button> </a></li>
       </ul>
     </div>
     
   </div>
 </div>
+
+
         </div>
     );
 };
