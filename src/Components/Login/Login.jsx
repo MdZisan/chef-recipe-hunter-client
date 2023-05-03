@@ -5,7 +5,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
 
-  const {user,loading,createUser,login,googleSignIn} = useContext(AuthContext)
+  const {user,login,googleSignIn} = useContext(AuthContext)
 // console.log(user,loading,createUser,login,googleSignIn);
 
 const handleGoogleSignIn =()=>{
@@ -18,7 +18,28 @@ const handleGoogleSignIn =()=>{
     console.log(error);
   })
 
+  
+
 }
+
+
+const handleLogin =(event)=>{
+  event.preventDefault()
+  const form = event.target;
+  const email = form.email.value;
+  const password = form.password.value;
+
+  
+  login(email,password)
+  .then(result=>{
+    const loggedUser = result.user;
+    console.log(loggedUser);
+  })
+  .catch(error=>{
+    console.log(error);
+  })
+}
+
 if(user){
  return <Navigate to={'/'}></Navigate>
 }
@@ -30,7 +51,7 @@ if(user){
             <h1 className="text-5xl font-bold">Login now!</h1>
          
           </div> <div  className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form>
+          <form onSubmit={handleLogin}>
             <div className="card-body">
               <div className="form-control">
                 <label className="label">

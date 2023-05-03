@@ -63,13 +63,14 @@ const Header = () => {
         </div>}
       </label>
       <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-        
+      <li>{user&& <p className='text-lg'> Name: {user.displayName}</p>}</li>
         <li><a> 
            {/* <button onClick={handleLogOut}>Logout</button>  */}
-        {user ? <a ><button onClick={handleLogOut}>Logout</button></a> : <Link to='/login'>Login</Link>}
-       {user&& <p>{user.email}</p>}
+        {user ? <a  className=''><button onClick={handleLogOut}>Logout</button></a> : <Link to='/login'>Login</Link>}
+       
         
          </a></li>
+        
       </ul>
     </div>
     
