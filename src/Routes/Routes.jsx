@@ -10,6 +10,7 @@ import RecipeDetailsLayout from "../layouts/RecipeDetailsLayout/RecipeDetailsLay
 import SingleRecipeDetails from "../layouts/RecipeDetailsLayout/SingleRecipeDetails";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import Blogs from "../Components/Blog/Blogs";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 const Routes = createBrowserRouter([
   {
@@ -40,7 +41,10 @@ const Routes = createBrowserRouter([
       
     children: [
         { path: ":id",
-     element: <ChefRecipesPage></ChefRecipesPage>
+     element: <PrivateRoutes>
+
+<ChefRecipesPage></ChefRecipesPage>
+     </PrivateRoutes>
       ,loader:({params})=>fetch(`https://chef-recipe-hunter-server-fy87vvubs-mdzisan.vercel.app/chefrecipes/${params.id}`)
     }
     ],
@@ -51,7 +55,9 @@ const Routes = createBrowserRouter([
     children:[
       {
         path:":id",
-        element:<SingleRecipeDetails></SingleRecipeDetails>,
+        element:<PrivateRoutes>
+          <SingleRecipeDetails></SingleRecipeDetails>
+        </PrivateRoutes>,
         loader:({params})=>fetch(`https://chef-recipe-hunter-server-fy87vvubs-mdzisan.vercel.app/recipe/${params.id}`)
       }
     ]

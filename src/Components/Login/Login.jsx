@@ -1,18 +1,22 @@
 import React, { useContext, useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { FaBeer, FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
   const [error,setError]=useState('')
+  const location = useLocation();
+  const navigate =  useNavigate()
   const {user,login,googleSignIn,githubSignIn} = useContext(AuthContext)
 // console.log(user,loading,createUser,login,googleSignIn);
-
+const from = location.state?.from?.pathname || '/';
+// console.log(from);
 const handleGoogleSignIn =()=>{
   googleSignIn()
   .then(result=>{
     const loggedUser = result.user;
     // console.log(loggedUser);
+    navigate(from, { replace: true })
   })
   .catch(error=>{
     setError(error.message);
@@ -24,6 +28,7 @@ const handleGithubSignIn =()=>{
   .then(result=>{
     const loggedUser =  result.user;
     console.log(loggedUser);
+    navigate(from, { replace: true })
   })
   .catch(error=>{
     setError(error.message);
@@ -45,15 +50,16 @@ const handleLogin =(event)=>{
     const loggedUser = result.user;
     console.log(loggedUser);
     setError('')
+    navigate(from, { replace: true })
   })
   .catch(error=>{
     setError(error.message);
   })
 }
 
-if(user){
- return <Navigate to={'/'}></Navigate>
-}
+// if(user){
+//  return <Navigate to={`${from}`}></Navigate>
+// }
 
     return (
         <div className="hero min-h-screen bg-base-200">
