@@ -32,6 +32,7 @@ const Routes = createBrowserRouter([
       },{
         path:"blog",
         element:<Blogs></Blogs>
+        ,loader:()=>fetch('https://chef-recipe-hunter-server-drbo5yt7e-mdzisan.vercel.app/blogs')
       }
     ],
   },
