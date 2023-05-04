@@ -25,7 +25,7 @@ const addToFav=()=>{
     <div>
       <div className=" bg-green-50 pt-4">
       <h1 className="text-5xl font-bold text-center">{recipe_name}</h1>
-        <div className="p-7 grid  grid-cols-3   gap-7">
+        <div className="p-7 grid  grid-cols-1 md:grid-cols-3   gap-7">
          <div> <LazyLoad width={300}>
 
          <img src={food_img} className="rounded-lg shadow-2xl" loading="lazy"/>

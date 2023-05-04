@@ -26,7 +26,14 @@ const ChefRecipesPage = () => {
           <div className="hero-content flex flex-col lg:flex-row-reverse items-center">
 
        
-        <LazyLoad height={500} width={1300} className="block" >
+        <LazyLoad height={500} width={300} className="md:hidden" >
+            <img
+              src={chef.chef_image}
+              className="max-w-sm rounded-lg shadow-2xl w-[100%]  " loading="lazy"
+            />
+            </LazyLoad>
+
+        <LazyLoad height={500} width={1300} className="hidden md:block" >
             <img
               src={chef.chef_image}
               className="max-w-sm rounded-lg shadow-2xl w-[100%]  " loading="lazy"

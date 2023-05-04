@@ -37,15 +37,42 @@ const back = () => {
       {chef && (
         
         <div className="card card-side bg-green-50 shadow-xl flex flex-col md:flex-row  ">
-  <figure className="h-[400px] w-[700px] my-auto ml-2 rounded-lg">
+  <figure className=" my-auto ml-2 rounded-lg">
     
-    <LazyLoad>
+    <LazyLoad className="md:hidden" width={300} height={500}>
+
+    <img src={chef.chef_image}  alt="food" loading="lazy"  className="rounded-lg md:w-full  " />
+    </LazyLoad>
+    
+    {/* <LazyLoad className="hidden md:block">
+
+    <img src={chef.chef_image}  alt="food" loading="lazy"  className="rounded-lg md:w-full w-[40%] " />
+    </LazyLoad> */}
+    <LazyLoad height={500} width={1300} className="hidden md:block" >
+            <img
+              src={chef.chef_image}
+              className="max-w-sm rounded-lg shadow-2xl w-[90%] h-[95%] " loading="lazy"
+            />
+            </LazyLoad>
+
+  
+    
+    </figure>
+  {/* <figure className="h-[400px] w-[700px] my-auto ml-2 rounded-lg">
+    
+    <LazyLoad className="md:hidded">
 
     <img src={chef.chef_image}  alt="food" loading="lazy"  className="rounded-lg md:w-full w-[40%] " />
     </LazyLoad>
     
+    <LazyLoad className="hidden">
+
+    <img src={chef.chef_image}  alt="food" loading="lazy"  className="rounded-lg md:w-full w-[40%] " />
+    </LazyLoad>
     
-    </figure>
+  
+    
+    </figure> */}
   <div className="card-body mt-7">
   <h1 className="text-xl font-bold">{chef.chef_name}</h1>
            
@@ -58,7 +85,7 @@ const back = () => {
            <div className="card-actions justify-end">
            <button
         onClick={back}
-        className="btn  ml-3   bg-green-300 hover:bg-green-500  text-black border-none mt-3  md:w-auto  "
+        className="btn  ml-3   bg-green-300 hover:bg-green-500  text-black border-none mt-3  md:w-auto w-[100%] "
       >
         <FaArrowLeft /> View More Recipes of this chef
       </button>
