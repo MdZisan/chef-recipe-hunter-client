@@ -17,7 +17,7 @@ const back = () => {
   const [chef, setChef] = useState();
   const { id } = useParams();
  useEffect(() => {
-    fetch(`https://chef-recipe-hunter-server-fy87vvubs-mdzisan.vercel.app/chefs/${id}`)
+    fetch(`https://chef-recipe-hunter-server-drbo5yt7e-mdzisan.vercel.app/chefs/${id}`)
       .then((res) => res.json())
       .then((data) => setChef(data))
       .catch((error) => console.log(error));

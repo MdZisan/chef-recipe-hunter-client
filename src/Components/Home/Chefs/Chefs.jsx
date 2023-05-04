@@ -6,7 +6,7 @@ const Chefs = () => {
 
     useEffect(()=>{
 
-        fetch('https://chef-recipe-hunter-server-fy87vvubs-mdzisan.vercel.app/chefs')
+        fetch('https://chef-recipe-hunter-server-drbo5yt7e-mdzisan.vercel.app/chefs')
         .then(res=>res.json())
         .then(data=>setChefs(data))
         .catch(error=>console.log(error))

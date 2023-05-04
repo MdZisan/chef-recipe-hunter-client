@@ -46,7 +46,7 @@ const Routes = createBrowserRouter([
 
 <ChefRecipesPage></ChefRecipesPage>
      </PrivateRoutes>
-      ,loader:({params})=>fetch(`https://chef-recipe-hunter-server-fy87vvubs-mdzisan.vercel.app/chefrecipes/${params.id}`)
+      ,loader:({params})=>fetch(`https://chef-recipe-hunter-server-drbo5yt7e-mdzisan.vercel.app/chefrecipes/${params.id}`)
     }
     ],
   },
@@ -59,7 +59,7 @@ const Routes = createBrowserRouter([
         element:<PrivateRoutes>
           <SingleRecipeDetails></SingleRecipeDetails>
         </PrivateRoutes>,
-        loader:({params})=>fetch(`https://chef-recipe-hunter-server-fy87vvubs-mdzisan.vercel.app/recipe/${params.id}`)
+        loader:({params})=>fetch(`https://chef-recipe-hunter-server-drbo5yt7e-mdzisan.vercel.app/recipe/${params.id}`)
       }
     ]
     
