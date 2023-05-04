@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData, useLocation, useNavigate, useParams } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import SingleRacipeCard from "./SingleRacipeCard";
+import LazyLoad from "react-lazy-load";
 
 
 
@@ -35,9 +36,17 @@ const back = () => {
       {/* banner */}
       {chef && (
         
-        <div className="card card-side bg-green-50 shadow-xl  ">
-  <figure className="h-[400px] w-[700px] my-auto ml-2 rounded-lg"><img src={chef.chef_image} alt="food" loading="lazy"  className="rounded-lg" /></figure>
-  <div className="card-body">
+        <div className="card card-side bg-green-50 shadow-xl flex flex-col md:flex-row  ">
+  <figure className="h-[400px] w-[700px] my-auto ml-2 rounded-lg">
+    
+    <LazyLoad>
+
+    <img src={chef.chef_image}  alt="food" loading="lazy"  className="rounded-lg md:w-full w-[40%] " />
+    </LazyLoad>
+    
+    
+    </figure>
+  <div className="card-body mt-7">
   <h1 className="text-xl font-bold">{chef.chef_name}</h1>
            
            <p className="py-1 font-semibold  text-sm">" <span className="text-slate-400">{chef.chef_bio}</span> "</p>
@@ -49,7 +58,7 @@ const back = () => {
            <div className="card-actions justify-end">
            <button
         onClick={back}
-        className="btn ml-3 bg-green-300 hover:bg-green-500  text-black border-none mt-3"
+        className="btn  ml-3   bg-green-300 hover:bg-green-500  text-black border-none mt-3  md:w-auto  "
       >
         <FaArrowLeft /> View More Recipes of this chef
       </button>

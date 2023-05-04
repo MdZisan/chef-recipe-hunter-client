@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import RecipeCard from "./RecipeCard";
+import LazyLoad from "react-lazy-load";
 
 const ChefRecipesPage = () => {
   const [chef, setChef] = useState();
@@ -23,11 +24,21 @@ const ChefRecipesPage = () => {
       {chef && (
         <div className="hero min-h-screen  bg-green-50 ">
           <div className="hero-content flex flex-col lg:flex-row-reverse items-center">
+
+       
+        <LazyLoad height={500} width={1300} className="block" >
             <img
               src={chef.chef_image}
-              className="max-w-sm rounded-lg shadow-2xl w-[100%] " loading="lazy"
+              className="max-w-sm rounded-lg shadow-2xl w-[100%]  " loading="lazy"
             />
-            <div >
+            </LazyLoad>
+
+        
+        
+            
+          
+          
+          <div className="w-auto" >
               <h1 className="text-5xl font-bold">{chef.chef_name}</h1>
            
               <p className="py-3 font-semibold ">" <span className="text-slate-400">{chef.chef_bio}</span> "</p>
@@ -38,17 +49,22 @@ const ChefRecipesPage = () => {
               <p className="py-3 font-semibold text-xl">Likes: {chef.likes}</p>
               
             </div>
+          
+        
           </div>
         </div>
       )}
 
         {/* recipes card */}
-        <div className="grid grid-cols-1 md:grid-cols-3 p-5 bg-green-50 ">
+   
+
+       <div className="grid grid-cols-1 md:grid-cols-3 p-5 bg-green-50 ">
             {
                 chefrecipes.map((recipe,index)=><RecipeCard key={index} recipe={recipe}></RecipeCard>)
             }
         </div>
 
+     
     </div>
   );
 };
