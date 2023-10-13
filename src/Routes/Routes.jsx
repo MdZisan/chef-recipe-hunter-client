@@ -16,7 +16,7 @@ const Routes = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    errorElement:<ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -29,41 +29,54 @@ const Routes = createBrowserRouter([
       {
         path: "register",
         element: <Register></Register>,
-      },{
-        path:"blog",
-        element:<Blogs></Blogs>
-        ,loader:()=>fetch('https://chef-recipe-hunter-server-drbo5yt7e-mdzisan.vercel.app/blogs')
-      }
+      },
+      {
+        path: "blog",
+        element: <Blogs></Blogs>,
+        loader: () =>
+          fetch(
+            "https://chef-recipe-hunter-server-drbo5yt7e-mdzisan.vercel.app/blogs"
+          ),
+      },
     ],
   },
   {
     path: "chefrecipes",
     element: <ChefRecipesLayout></ChefRecipesLayout>,
-      
-    children: [
-        { path: ":id",
-     element: <PrivateRoutes>
 
-<ChefRecipesPage></ChefRecipesPage>
-     </PrivateRoutes>
-      ,loader:({params})=>fetch(`https://chef-recipe-hunter-server-drbo5yt7e-mdzisan.vercel.app/chefrecipes/${params.id}`)
-    }
+    children: [
+      {
+        path: ":id",
+        element: (
+          <PrivateRoutes>
+            <ChefRecipesPage></ChefRecipesPage>
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://chef-recipe-hunter-server-drbo5yt7e-mdzisan.vercel.app/chefrecipes/${params.id}`
+          ),
+      },
     ],
   },
   {
-    path:"recipe",
-    element:<RecipeDetailsLayout></RecipeDetailsLayout>,
-    children:[
+    path: "recipe",
+    element: <RecipeDetailsLayout></RecipeDetailsLayout>,
+    children: [
       {
-        path:":id",
-        element:<PrivateRoutes>
-          <SingleRecipeDetails></SingleRecipeDetails>
-        </PrivateRoutes>,
-        loader:({params})=>fetch(`https://chef-recipe-hunter-server-drbo5yt7e-mdzisan.vercel.app/recipe/${params.id}`)
-      }
-    ]
-    
-  }
+        path: ":id",
+        element: (
+          <PrivateRoutes>
+            <SingleRecipeDetails></SingleRecipeDetails>
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://chef-recipe-hunter-server-drbo5yt7e-mdzisan.vercel.app/recipe/${params.id}`
+          ),
+      },
+    ],
+  },
 ]);
 
 export default Routes;

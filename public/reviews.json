@@ -1,0 +1,53 @@
+
+  [
+      {
+        "id": 1,
+        "author_name": "John Doe",
+        "author_email": "john.doe@example.com",
+        "rating": 5,
+        "review_text": "This recipe was absolutely delicious! I made it for my family and they loved it. I'll definitely be making it again.",
+        "author_photo": "https://static.vecteezy.com/system/resources/previews/007/043/161/original/male-avatar-smiling-portrait-of-a-cheerful-young-man-with-a-happy-smile-vector.jpg"
+      },
+      {
+        "id": 2,
+        "author_name": "Jane Doe",
+        "author_email": "jane.doe@example.com",
+        "rating": 4,
+        "review_text": "This recipe was good, but it was a little bit too spicy for me. I would recommend using less chili if you dont like spicy.",
+        "author_photo": "https://avatoon.me/wp-content/uploads/2021/09/Cartoon-Pic-Ideas-for-DP-Profile11.png"
+      },
+      {
+        "id": 3,
+        "author_name": "Michael Smith",
+        "author_email": "michael.smith@example.com",
+        "rating": 3,
+        "review_text": "This recipe was okay, but it wasn't anything special. I've had better Bangladeshi food at restaurants.",
+        "author_photo": "https://avatoon.me/wp-content/uploads/2021/09/Cartoon-Pic-Ideas-for-DP-Profile-06-768x766.png"
+      },
+      {
+        "id": 4,
+        "author_name": "Sarah Jones",
+        "author_email": "sarah.jones@example.com",
+        "rating": 5,
+        "review_text": "This recipe was so easy to follow and the results were amazing! I'm not the best cook, but I was able to make this dish look and taste like it was from a restaurant.",
+        "author_photo": "https://img.freepik.com/premium-vector/cute-boy-avatar-illustration_637684-31.jpg?size=338&ext=jpg&ga=GA1.1.1413502914.1696723200&semt=ais"
+      },
+      {
+        "id": 5,
+        "author_name": "David Williams",
+        "author_email": "david.williams@example.com",
+        "rating": 4,
+        "review_text": "I really enjoyed this recipe! It was flavorful and satisfying, but it didn't take too long to make. I would recommend it to anyone looking for a delicious and easy Bangladeshi dish.",
+        "author_photo": "https://img.freepik.com/premium-vector/korea-man-vector-illustration-cartoon_969863-547.jpg?w=360"
+      },
+      {
+        "id": 6,
+        "author_name": "Emily Miller",
+        "author_email": "emily.miller@example.com",
+        "rating": 5,
+        "review_text": "This recipe is a keeper! It's so easy to make and the results are always delicious. I've made it for friends and family gatherings and everyone loves it. I highly recommend it!",
+        "author_photo": "https://img.freepik.com/premium-photo/teacher-man-avatar-icon-illustration-vector-style_131965-963.jpg"
+      }
+    ]
+  
+  
