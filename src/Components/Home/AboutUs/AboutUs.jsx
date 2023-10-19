@@ -1,16 +1,11 @@
 import React from "react";
-import ReactStars from "react-rating-stars-component";
 
 const AboutUs = () => {
-    const firstExample = {
-        size: 30,
-        value: 2.5,
-        edit: false
-      };
+   
   return (
     <div>
       <h1 className="text-center text-3xl font-bold">About us</h1>
-    <ReactStars {...firstExample} />
+   
       <div className="w-full px-10 text-justify ">
         Chef Bangla Recipe is a website dedicated to sharing the best
         Bangladeshi recipes with the world. We believe that Bangladeshi cuisine

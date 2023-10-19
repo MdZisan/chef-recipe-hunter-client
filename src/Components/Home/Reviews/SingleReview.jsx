@@ -2,7 +2,7 @@ import React from 'react';
 import ReactStars from "react-rating-stars-component";
 const SingleReview = ({review}) => {
    const {author_name,author_email,author_photo,rating,review_text}= review;
-   console.log(review);
+  
 //    const ratings = {
 //     size: 30, 
 //     value: 3,

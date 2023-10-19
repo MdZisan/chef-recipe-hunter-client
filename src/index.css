@@ -48,3 +48,8 @@ a{
 .is-visible {
   opacity: 1;
 }
+
+.w-transtion{
+  transition: all 1s ease-in-out;
+  
+}

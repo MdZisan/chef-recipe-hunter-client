@@ -6,6 +6,10 @@ import Service from "./extraSection/Service";
 import ContactUs from "./extraSection/ContactUs/ContactUs";
 import AboutUs from "./AboutUs/AboutUs";
 import Reviews from "./Reviews/Reviews";
+import LikedItems from "./LikedItems/LikedItems";
+import NewsLetter from "./NewsLetter/NewsLetter";
+import Faq from "./Faq/Faq";
+import Gallery from "./Gallery/Gallery";
 
 const Home = () => {
   return (
@@ -15,7 +19,12 @@ const Home = () => {
       </LazyLoad>
       <Chefs></Chefs>
       <Service></Service>
+      <LikedItems></LikedItems>
+      
       <Reviews/>
+      <Gallery/>
+      <NewsLetter/>
+      <Faq/>
       <AboutUs/>
       
       <ContactUs></ContactUs>

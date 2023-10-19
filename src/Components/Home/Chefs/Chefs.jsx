@@ -16,12 +16,14 @@ const Chefs = () => {
 
 // console.log(chefs);
 
-    return (
-        <div className='grid grid-cols-1 md:grid-cols-3 md:gap-3 m-6 '>
+    return (<>
+    
+    <h1 className="m-6 text-center text-3xl font-bold">Our Chefs</h1>
+        <div className='grid grid-cols-1 md:grid-cols-3 md:gap-3  '>
             {
                 chefs.map(chef=><SingleChef key={chef.id} chef={chef}></SingleChef>)
             }
-        </div>
+        </div></>
     );
 };
 
